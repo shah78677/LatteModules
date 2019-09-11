@@ -2,7 +2,7 @@
 	
 	if(isset($_GET['b']) && !empty($_GET['b']))
 	{
-		$book_name = "%" . htmlspecialchars(str_replace('_', ' ', $_GET['b'])) . "%";
+		$book_name = "%" . htmlspecialchars($_GET['b']) . "%";
 		$conn = new PDO("mysql:host=localhost;dbname=books;charset=utf8", 'root', '');
 		$conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
